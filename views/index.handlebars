@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1>Scraping Gremlin</h1>
+
+        <a href="/scrape"> <button type="button" class="btn btn-danger scrape"> Scrape for Articles </button></a>
+    </div>
+    <div class="article-container">
+
+        {{#each Article}}
+        <div class="row">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">{{this.title}}
+                    <a href="/notes/{{this._id}}">
+                        <button type="button" class="btn btn-warning save-article">See Notes</button> </a>
+                </div>
+                <div class="panel-body">
+                    <a href="https://old.reddit.com/r/webdev{{this.link}}" target="_blank"> {{this.link}}</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <footer class="footer container">
+        <p>Copyright 2019</p>
+    </footer>
+
+</div>
+<script>
+</script>
