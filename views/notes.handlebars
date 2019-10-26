@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div class="jumbotron">
+    <div class="jumbotron1">
         {{#each Article}}
         <h2> "{{this.title}}" </h2>
         <h4><a href="https://old.reddit.com/r/webdev{{this.link}}" target="_blank"> {{this.link}}</a></h4>
@@ -38,7 +38,8 @@
                 <h4>Add your note.</h4>
             </div>
             <div class="modal-body">
-                <p>Add a Note on this article. This article ID is {{this._id}}. This headline is "{{this.title}}".</p>
+                <p>Article ID: {{this._id}}.</p>
+                <p>Headline: "{{this.title}}".</p>
                 <form method="POST" action="/notes/{{this._id}}">
                     <div class="form-group">
                         <label>Note:</label>

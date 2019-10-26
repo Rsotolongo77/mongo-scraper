@@ -1,31 +1,34 @@
 <div class="container">
+
+
     <div class="jumbotron">
-        <h1>Scraping Gremlin</h1>
-
-        <a href="/scrape"> <button type="button" class="btn btn-danger scrape"> Scrape for Articles </button></a>
+        <h1 class="display-2">Scraping Gremlin</h1>
+        <p class="lead">This is a simple scraper for reddit articles. Enjoy the reading....</p>
+        <hr class="my-4">
+        <a href="/scrape"> <button type="button" class="btn btn-danger scrape" id="scrapBtn"> Scrape Articles
+            </button></a>
     </div>
-    <div class="article-container">
 
-        {{#each Article}}
-        <div class="row">
+    <br>
 
-            <div class="panel panel-primary">
-                <div class="panel-heading">{{this.title}}
-                    <a href="/notes/{{this._id}}">
-                        <button type="button" class="btn btn-warning save-article">See Notes</button> </a>
-                </div>
-                <div class="panel-body">
-                    <a href="https://old.reddit.com/r/webdev{{this.link}}" target="_blank"> {{this.link}}</a>
-                </div>
+    {{#each Article}}
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-heading">{{this.title}}
+                <a href="/notes/{{this._id}}">
+                    <button type="button" id="noteBtn" class="btn btn-warning save-article">See Notes</button> </a>
             </div>
+            <br>
+            <div class="panel-body">
+                <a href="https://old.reddit.com/r/webdev{{this.link}}" target="_blank"> {{this.link}}</a>
+
+            </div>
+            {{!-- <button type="button" id="noteBtn" class="btn btn-warning save-article">See Notes</button> </a> --}}
         </div>
-        {{/each}}
     </div>
-
-    <footer class="footer container">
-        <p>Copyright 2019</p>
-    </footer>
-
+    {{/each}}
 </div>
+
+
 <script>
 </script>
