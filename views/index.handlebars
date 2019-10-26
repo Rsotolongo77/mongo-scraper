@@ -9,7 +9,7 @@
             </button></a>
     </div>
 
-    <br>
+    {{!-- <br> --}}
 
     {{#each Article}}
     <div class="row">
@@ -18,7 +18,7 @@
                 <a href="/notes/{{this._id}}">
                     <button type="button" id="noteBtn" class="btn btn-warning save-article">See Notes</button> </a>
             </div>
-            <br>
+            {{!-- <br> --}}
             <div class="panel-body">
                 <a href="https://old.reddit.com/r/webdev{{this.link}}" target="_blank"> {{this.link}}</a>
 
