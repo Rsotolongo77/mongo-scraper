@@ -4,7 +4,7 @@ body {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    background-image: url(./images/ripped-paper-set/11033.eps)
+    background-color: black;
     
 }
 
@@ -12,7 +12,7 @@ body {
   /* background: linear-gradient(-75deg, rgb(128, 127, 127), #181717);
 	background-size: 400% 400%;
   animation: gradientBG 7s linear infinite; */
-  background: rgba(0, 0, 0, 0.212);
+  background: rgb(110, 110, 110);
   padding: 0px;
   border-radius: 7px;
   border: 2px solid rgb(185, 185, 185);
