@@ -3,8 +3,8 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var methodOverride = require("method-override");
-var Note = require("./models/Note.js");
-var Article = require("./models/Article.js");
+var Note = require("./models/note.js");
+var Article = require("./models/article.js");
 
 
 //Scraping tools
@@ -34,12 +34,10 @@ app.set("view engine", "handlebars");
 
 // Database configuration with mongoose
 mongoose.Promise = Promise;
-var databaseUri = "mongodb://localhost/mongo-scraper";
-if (process.env.MONGODB_URI) {
-    mongoose.connect(process.env.MONGODB_URI);
-} else {
-    mongoose.connect(databaseUri);
-}
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongo-scraper";
+
+mongoose.connect(MONGODB_URI);
+
 var db = mongoose.connection;
 
 db.on("error", function (error) {
