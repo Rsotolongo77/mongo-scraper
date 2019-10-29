@@ -3,8 +3,8 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var methodOverride = require("method-override");
-var Note = require("./models/note.js");
-var Article = require("./models/article.js");
+var Note = require("./models/Note.js");
+var Article = require("./models/Article.js");
 
 
 //Scraping tools
