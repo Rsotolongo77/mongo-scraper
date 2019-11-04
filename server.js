@@ -72,7 +72,6 @@ app.get("/scrape", function (req, res) {
         var $ = cheerio.load(html);
         $("p.title").each(function (i, element) {
             var result = [];
-            result.reverse();
 
 
 
@@ -83,7 +82,9 @@ app.get("/scrape", function (req, res) {
                 .children("a")
                 .attr("href");
 
-            var entry = new Article(result);
+            var redone = result.reverse();
+
+            var entry = new Article(redone);
 
 
             entry.save(function (err, doc) {
@@ -93,11 +94,13 @@ app.get("/scrape", function (req, res) {
                 }
 
                 else {
+
                     console.log(doc);
                 }
             });
 
         });
+
         res.redirect("/");
         console.log("Successfully Scraped");
     });
