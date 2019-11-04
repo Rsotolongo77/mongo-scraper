@@ -71,7 +71,10 @@ app.get("/scrape", function (req, res) {
 
         var $ = cheerio.load(html);
         $("p.title").each(function (i, element) {
-            var result = {};
+            var result = [];
+            result.reverse();
+
+
 
             result.title = $(this)
                 .children("a")
@@ -81,6 +84,7 @@ app.get("/scrape", function (req, res) {
                 .attr("href");
 
             var entry = new Article(result);
+
 
             entry.save(function (err, doc) {
 
